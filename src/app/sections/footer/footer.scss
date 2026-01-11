@@ -1,0 +1,12 @@
+.footer {
+  background: var(--blue-deep);
+  color: var(--white);
+  text-align: center;
+  padding: 2.5rem 1rem;
+
+  .note {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: var(--color-primary);
+  }
+}

@@ -1,0 +1,33 @@
+.gifts {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: #fff;
+
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+  }
+
+  a {
+    color: var(--gold-main);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .thank-you {
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--color-primary);
+  }
+}

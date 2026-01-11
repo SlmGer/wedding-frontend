@@ -1,0 +1,80 @@
+<section class="admin-rsvp">
+  <h2>Réponses RSVP</h2>
+
+  @if (!(rsvps.length > 0)){
+    <p>Aucune réponse pour le moment</p>
+  }
+
+  <div class="stats">
+    <div>👥 Total : {{ rsvps.length }}</div>
+    <div>✅ Présents : {{ comingCount }}</div>
+    <div>❌ Absents : {{ rsvps.length - comingCount }}</div>
+  </div>
+
+  @if (rsvps.length > 0) {
+    <table class="rsvp-table">
+      <thead>
+      <tr>
+        <th>Invité</th>
+        <th>Présence</th>
+        <th>Lieux</th>
+        <th>Enfants</th>
+        <th>Préférences alimentaires</th>
+        <th>Transport</th>
+        <th>Remarque</th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+        @for (r of rsvps; track r.id){
+          <tr>
+            <td>{{ r.guestName }}</td>
+            <td>
+              <span [class.yes]="r.presence === 'YES'"
+                      [class.no]="r.presence === 'NO'">
+                {{ r.presence === 'YES' ? 'Oui' : 'Non' }}
+              </span>
+            </td>
+            <td>
+              @if (r.mairie){
+                <span>Mairie</span><br/>
+              }
+              @if (r.eglise){
+                <span>Église</span><br/>
+              }
+              @if (r.reception){
+                <span>Réception</span>
+              }
+            </td>
+            <td>{{ r.enfants }}</td>
+            <td>
+              @if (r.vegetarien){
+                <span>Végétarien</span><br/>
+              }
+              @if (r.halal){
+                <span>Halal</span><br/>
+              }
+              @if (r.casher){
+                <span>Casher</span><br/>
+              }
+            </td>
+            <td>
+              {{ r.vehicule ? 'Véhicule' : '' }}
+              {{ r.covoiturage ? 'Covoiturage' : '' }}
+            </td>
+
+            <td class="note">{{ r.remarque || '-' }}</td>
+
+            <td>
+              <button class="danger" (click)="remove(r.id!)">
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        }
+
+      </tbody>
+    </table>
+  }
+</section>

@@ -1,0 +1,41 @@
+<section class="accommodation" id="accommodation">
+  <div class="container">
+
+    <h2>Où dormir à proximité</h2>
+
+    <p class="intro">
+      Pour votre confort, voici quelques hébergements proches du lieu de réception.
+    </p>
+
+    <div class="accommodation-grid">
+
+      @for(acc of accommodations; track acc.id){
+        <a class="accommodation-card"
+          href="{{acc.googleMapsUrl}}"
+          target="_blank"
+          rel="noopener"
+        >
+          @if(acc.imageUrl){
+          <img src="{{acc.imageUrl}}" alt="{{acc.name}}" />
+          }@else{
+          <img src="assets/hebergement.jpg" alt="{{acc.name}}" />
+          }
+          <div class="overlay">
+            <span class="type">{{ acc.type }}</span>
+            <h3>{{ acc.name }}</h3>
+            <p class="address">{{ acc.address }}</p>
+            @if(acc.distance){
+              <span class="distance">
+                ⏱ {{ acc.distance }}
+              </span>
+            }
+          </div>
+        </a>
+      }@empty {
+      <p>Aucun hébergement disponible.</p>
+      }
+    </div>
+
+  </div>
+</section>
+

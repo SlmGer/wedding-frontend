@@ -1,0 +1,51 @@
+<!--<app-hero></app-hero>
+<button class="logout" (click)="logout()">
+  Se déconnecter
+</button>
+<section class="admin-dashboard">
+  <h1>Administration</h1>
+
+  <div class="cards">
+    <a routerLink="/admin/rsvp" class="card">
+      <h2>RSVP</h2>
+      <p>Voir et gérer les réponses</p>
+    </a>
+
+    <a routerLink="/admin/accommodations" class="card">
+      <h2>Hébergements</h2>
+      <p>Gestion des hébergements</p>
+    </a>
+  </div>
+</section>
+<router-outlet></router-outlet>
+<app-footer></app-footer>-->
+
+
+
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">Admin</h2>
+
+    <nav>
+      <a routerLink="/admin/dashboard" routerLinkActive="active">
+        📊 Dashboard
+      </a>
+      <a routerLink="/admin/rsvp" routerLinkActive="active">
+        💌 RSVP
+      </a>
+      <a routerLink="/admin/accommodations" routerLinkActive="active">
+        🏨 Hébergements
+      </a>
+    </nav>
+
+    <button class="logout" (click)="logout()">Déconnexion</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

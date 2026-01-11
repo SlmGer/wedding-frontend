@@ -1,0 +1,46 @@
+<h1>Dashboard RSVP</h1>
+@if(stats){
+<div class="stats-grid">
+
+  <div class="stat-card">
+    <h3>Invités</h3>
+    <p>{{ stats.total }}</p>
+  </div>
+
+  <div class="stat-card success">
+    <h3>Présents</h3>
+    <p>{{ stats.present }}</p>
+  </div>
+
+  <div class="stat-card danger">
+    <h3>Absents</h3>
+    <p>{{ stats.absent }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Enfants</h3>
+    <p>{{ stats.enfants }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Mairie</h3>
+    <p>{{ stats.mairie }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Église</h3>
+    <p>{{ stats.eglise }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Vin d'honneur</h3>
+    <p>{{ stats.vindhonneur }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Réception</h3>
+    <p>{{ stats.reception }}</p>
+  </div>
+
+</div>
+}

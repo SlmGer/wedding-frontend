@@ -1,0 +1,27 @@
+.hero {
+  height: 100vh;
+  background-image: url('/assets/img_9.jfif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      rgba(31,42,68,0.4),
+      rgba(31,42,68,0.7)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.subtitle {
+  color: var(--blue-main);
+  font-style: italic;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}

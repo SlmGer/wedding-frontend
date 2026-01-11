@@ -1,0 +1,28 @@
+<div class="login-page">
+  <div class="login-card">
+    <h1>Bienvenue</h1>
+    <p class="subtitle">Merci d’entrer le mot de passe</p>
+
+    <form (ngSubmit)="submit()" #form="ngForm">
+      <div class="field">
+        <label for="password">Mot de passe</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+
+      <button type="submit">Entrer</button>
+
+      @if (error) {
+      <p class="error">
+        Mot de passe incorrect
+      </p>
+      }
+    </form>
+  </div>
+</div>
+

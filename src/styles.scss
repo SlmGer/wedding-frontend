@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+  --bg-main: #F9FAFC;
+  --gold-main: #7c5f03;     // or doux
+  --white: rgba(255, 255, 255, 0.78);
+  --bg-soft: #f8f7f4;
+
+  --blue-soft: rgba(159, 186, 202, 0.81);     // bleu ciel
+  --blue-main: #4fa3c7;     // bleu azur
+  --blue-deep: #1f2a44;     // bleu nuit
+  --white: #ffffff;
+
+  --ivory: #f8f6f2;
+  --cream: #efe4cf;
+  --blue-light: #cfddea;
+  --blue-soft: #9fb3c8;
+  --gold-soft: #d6b46a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-main);
+  color: var(--blue-deep);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 1rem 1rem;
+  scroll-margin-top: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.2s ease forwards;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.section-transition {
+  height: 120px;
+  background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0),
+      #ffffff
+  );
+  position: relative;
+  z-index: 2;
+}
+
