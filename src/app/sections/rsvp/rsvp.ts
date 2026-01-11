@@ -23,13 +23,13 @@ export class Rsvp {
   model: RsvpModel = {
     guestName: '',
 
-    presence: 'YES',
+    present: 'YES',
     enfants: 0,
 
     vegetarien: false,
     halal: false,
     casher: false,
-    sansAllergenes: false,
+    sansAllergene: false,
 
     mairie: true,
     eglise: true,
@@ -47,7 +47,7 @@ export class Rsvp {
     this.loading = true;
     this.error = false;
 
-    if (this.model.presence === 'NO') {
+    if (this.model.present === 'NO') {
       this.model.enfants = 0;
       this.model.mairie = false;
       this.model.eglise = false;

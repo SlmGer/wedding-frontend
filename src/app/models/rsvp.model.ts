@@ -2,7 +2,7 @@ export interface RsvpModel {
   id?: number;
 
   guestName: string;
-  presence: 'YES' | 'NO';
+  present: 'YES' | 'NO';
 
   mairie: boolean;
   eglise: boolean;
@@ -14,7 +14,7 @@ export interface RsvpModel {
   vegetarien: boolean;
   halal: boolean;
   casher: boolean;
-  sansAllergenes: boolean;
+  sansAllergene: boolean;
 
   vehicule: boolean;
   covoiturage: boolean;

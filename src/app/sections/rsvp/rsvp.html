@@ -38,20 +38,20 @@
       <label>Serez-vous présent ?</label>
       <div class="choice">
         <label class="radio">
-          <input type="radio" name="presence" value="YES" required
-          [(ngModel)]="model.presence"/>
+          <input type="radio" name="present" value="YES" required
+          [(ngModel)]="model.present"/>
           <span></span> Oui, avec plaisir
         </label>
 
         <label class="radio">
-          <input type="radio" name="presence" value="NO"
-          [(ngModel)]="model.presence"/>
+          <input type="radio" name="present" value="NO"
+          [(ngModel)]="model.present"/>
           <span></span> Non, avec regret
         </label>
       </div>
     </div>
 
-    @if (model.presence === 'YES') {
+    @if (model.present === 'YES') {
     <!-- Nombre d'enfants -->
     <div class="field">
       <label for="children">Nombre d'enfants</label>
