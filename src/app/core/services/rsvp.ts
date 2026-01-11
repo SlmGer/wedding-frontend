@@ -14,8 +14,8 @@ export class RsvpService {
 
   submitRsvp(data: RsvpModel){
     return this.http.post<{
-      message: string,
-      updated: boolean
+      updated: boolean,
+      message: string
     }>(this.apiUrl, data);
   }
 
