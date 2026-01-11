@@ -3,11 +3,11 @@ export interface RsvpModel {
 
   guestName: string;
   enfants: number;
-  present: 'YES' | 'NO';
+  present: boolean;
 
   mairie: boolean;
   eglise: boolean;
-  vindhonneur: boolean;
+  vinDHonneur: boolean;
   reception: boolean;
 
   vegetarien: boolean;

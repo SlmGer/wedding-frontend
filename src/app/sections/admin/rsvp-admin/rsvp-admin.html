@@ -31,9 +31,9 @@
           <tr>
             <td>{{ r.guestName }}</td>
             <td>
-              <span [class.yes]="r.present === 'YES'"
-                      [class.no]="r.present === 'NO'">
-                {{ r.present === 'YES' ? 'Oui' : 'Non' }}
+              <span [class.yes]="r.present === true"
+                      [class.no]="r.present === false">
+                {{ r.present ? 'Oui' : 'Non' }}
               </span>
             </td>
             <td>
