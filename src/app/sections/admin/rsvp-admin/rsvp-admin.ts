@@ -32,6 +32,6 @@ export class RsvpAdmin implements OnInit {
   }
 
   get comingCount() {
-    return this.rsvps.filter(r => r.present === 'YES').length;
+    return this.rsvps.filter(r => r.present).length;
   }
 }
