@@ -2,14 +2,13 @@ export interface RsvpModel {
   id?: number;
 
   guestName: string;
+  enfants: number;
   present: 'YES' | 'NO';
 
   mairie: boolean;
   eglise: boolean;
   vindhonneur: boolean;
   reception: boolean;
-
-  enfants: number;
 
   vegetarien: boolean;
   halal: boolean;
