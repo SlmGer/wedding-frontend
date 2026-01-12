@@ -2,6 +2,7 @@
   padding: 1rem 2rem;
   background: linear-gradient(180deg, #eaf4ff, #cfe7ff);
   text-align: center;
+  overflow-x: hidden;
 }
 
 .info h2 {
@@ -87,4 +88,61 @@ a {
   color: var(--gold-main);
   font-weight: 600;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+  .countdown {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .time-box {
+    min-width: 100px;
+    flex: 1;
+  }
+
+  .timeline {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .event {
+    text-align: left;
+  }
+
+  .event::before {
+    left: 1.5rem;
+    transform: none;
+  }
+
+  .info h2 {
+    font-size: 2.1rem;
+  }
+
+  .hour {
+    font-size: 1.4rem;
+  }
+
+  .event p {
+    font-size: 0.9rem;
+  }
+
+  .timeline {
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(212, 175, 55, 0.4);
+  }
+
+  .event {
+    padding-left: 3rem;
+  }
 }
