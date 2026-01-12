@@ -47,7 +47,7 @@ export class Rsvp {
     this.loading = true;
     this.error = false;
 
-    if (this.model.present) {
+    if (!this.model.present) {
       this.model.enfants = 0;
       this.model.mairie = false;
       this.model.eglise = false;
