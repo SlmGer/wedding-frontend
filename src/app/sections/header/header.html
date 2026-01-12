@@ -3,17 +3,11 @@
 
     <div class="logo">Mariage</div>
 
-      <button class="burger"
-              [class.open]="menuOpen"
-              (click)="toggleMenu()"
-              aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="burger" (click)="toggleMenu()" aria-label="Menu">
+        ☰
       </button>
-
-    <nav [class.open]="menuOpen" (click)="menuOpen = false">
-    <a href="#hero" data-section="hero">Accueil</a>
+      <nav [class.open]="menuOpen">
+        <a href="#hero" data-section="hero">Accueil</a>
         <a href="#about" data-section="about">Notre histoire</a>
         <a href="#info" data-section="info">Infos</a>
         <a href="#accommodation" data-section="accommodation">Hébergements</a>
