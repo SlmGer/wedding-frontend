@@ -218,3 +218,18 @@ button[disabled] {
     transform: translateY(0);
   }
 }
+
+@media (min-width: 768px) {
+  .rsvp-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rsvp-form .field {
+    grid-column: span 2;
+  }
+
+  .rsvp-form .choice {
+    display: flex;
+    gap: 1rem;
+  }
+}
