@@ -38,13 +38,15 @@
       <label>Serez-vous présent ?</label>
       <div class="choice">
         <label class="radio">
-          <input type="radio" name="present" [(ngValue)]="true" required
+          <input type="radio" name="present" value="true"
+                 (ngModelChange)="model.present = $event === 'true'" required
           [(ngModel)]="model.present"/>
           <span></span> Oui, avec plaisir
         </label>
 
         <label class="radio">
-          <input type="radio" name="present" [(ngValue)]="false"
+          <input type="radio" name="present" value="false"
+                 (ngModelChange)="model.present = $event === 'true'"
           [(ngModel)]="model.present"/>
           <span></span> Non, avec regret
         </label>
