@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { RsvpService } from '../../core/services/rsvp';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { RsvpModel } from '../../models/rsvp.model';
 
 @Component({
   selector: 'app-rsvp',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './rsvp.html',
   styleUrl: './rsvp.scss',
