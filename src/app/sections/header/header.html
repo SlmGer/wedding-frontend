@@ -1,6 +1,5 @@
 <header class="header">
   <div class="nav-container">
-
     <button class="burger"
             [class.open]="menuOpen"
             (click)="toggleMenu()"
@@ -10,8 +9,8 @@
       <span></span>
     </button>
 
-    <nav [class.open]="menuOpen" (click)="menuOpen = false">
-    <a href="#hero" data-section="hero">Accueil</a>
+    <nav [class.open]="menuOpen">
+      <a href="#hero" data-section="hero">Accueil</a>
       <a href="#about" data-section="about">Notre histoire</a>
       <a href="#info" data-section="info">Infos</a>
       <a href="#accommodation" data-section="accommodation">Hébergements</a>
