@@ -1,21 +1,25 @@
 <header class="header">
   <div class="nav-container">
 
-    <div class="logo">Mariage</div>
+    <button class="burger"
+            [class.open]="menuOpen"
+            (click)="toggleMenu()"
+            aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <button class="burger" (click)="toggleMenu()" aria-label="Menu">
-        ☰
-      </button>
-      <nav [class.open]="menuOpen">
-        <a href="#hero" data-section="hero">Accueil</a>
-        <a href="#about" data-section="about">Notre histoire</a>
-        <a href="#info" data-section="info">Infos</a>
-        <a href="#accommodation" data-section="accommodation">Hébergements</a>
-        <a href="#dresscode" data-section="dresscode">Dress Code</a>
-        <a href="#gifts" data-section="gifts">Cadeaux</a>
-        <a href="#rsvp" data-section="rsvp">RSVP</a>
+    <nav [class.open]="menuOpen" (click)="menuOpen = false">
+    <a href="#hero" data-section="hero">Accueil</a>
+      <a href="#about" data-section="about">Notre histoire</a>
+      <a href="#info" data-section="info">Infos</a>
+      <a href="#accommodation" data-section="accommodation">Hébergements</a>
+      <a href="#dresscode" data-section="dresscode">Dress Code</a>
+      <a href="#gifts" data-section="gifts">Cadeaux</a>
+      <a href="#rsvp" data-section="rsvp">RSVP</a>
 
-        <button class="logout" (click)="logout()">Se déconnecter</button>
-      </nav>
+      <button class="logout" (click)="logout()">Se déconnecter</button>
+    </nav>
   </div>
 </header>

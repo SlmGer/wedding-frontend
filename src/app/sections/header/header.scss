@@ -61,11 +61,50 @@ a.active::after {
 
 .burger {
   display: none;
-  font-size: 1.8rem;
+  width: 32px;
+  height: 24px;
+  position: relative;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--blue-deep);
+  padding: 0;
+
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--blue-deep);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  span:nth-child(1) {
+    top: 0;
+  }
+
+  span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  span:nth-child(3) {
+    bottom: 0;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 50%;
+  }
 }
 
 @media (max-width: 768px) {
