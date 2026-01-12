@@ -14,6 +14,7 @@ export class Header implements OnInit {
   private router = inject(Router);
 
   isLoggedIn = false;
+  menuOpen = false;
 
   ngOnInit() {
     this.isLoggedIn = this.auth.isLoggedIn();
@@ -44,5 +45,9 @@ export class Header implements OnInit {
         link.classList.add('active');
       }
     });
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }
