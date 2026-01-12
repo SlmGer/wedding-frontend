@@ -1,22 +1,12 @@
 <section class="rsvp" id="rsvp">
   <div class="container">
   <h2>Votre présence</h2>
-  <p class="intro">
-    <strong>Merci de nous confirmer votre présence avant le 15 janvier 2026</strong>
-  </p>
+    <p class="intro">
+      <strong>Merci de nous confirmer votre présence avant le 31 janvier 2026</strong>
+    </p>
 
-  <!-- MESSAGE SUCCES -->
-  @if (successMessage) {
-    <div class="success">{{ successMessage }}</div>
-  }
-
-  <!-- MESSAGE ERREUR -->
-  @if (error) {
-    <div class="error">Une erreur est survenue, merci de réessayer.</div>
-  }
-
-  <!-- FORMULAIRE -->
-  <form #userForm="ngForm" (ngSubmit)="onSubmit()" class="rsvp-form">
+    <!-- FORMULAIRE -->
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" class="rsvp-form">
     <!-- Nom -->
     <div class="field">
       <label for="name">Nom & Prénom</label>
@@ -26,39 +16,31 @@
       />
     </div>
 
-    <!-- Email
-    <div class="field">
-      <label>Email</label>
-      <input type="email" required name="email"
-             [(ngModel)]="model.email"
-             placeholder="Votre email" />
-    </div>-->
-
     <!-- Présence -->
     <div class="field">
       <label>Serez-vous présent ?</label>
       <div class="choice">
         <label class="radio">
-          <input type="radio" name="present" value="true"
-                 (ngModelChange)="model.present = $event === 'true'" required
+          <input type="radio" name="present" [value]="true"
+                 (ngModelChange)="model.present" required
           [(ngModel)]="model.present"/>
           <span></span> Oui, avec plaisir
         </label>
 
         <label class="radio">
-          <input type="radio" name="present" value="false"
-                 (ngModelChange)="model.present = $event === 'true'"
+          <input type="radio" name="present" [value]="false"
+                 (ngModelChange)="model.present"
           [(ngModel)]="model.present"/>
           <span></span> Non, avec regret
         </label>
       </div>
     </div>
 
-    @if (model.present) {
+    <div class="conditional-section" [class.disabled]="!isComing">
     <!-- Nombre d'enfants -->
     <div class="field">
       <label for="children">Nombre d'enfants</label>
-      <select id="children" name="enfants" [(ngModel)]="model.enfants">
+      <select id="children" name="enfants" [(ngModel)]="model.enfants" [disabled]="!isComing">
         <option [ngValue]="0">0</option>
         <option [ngValue]="1">1</option>
         <option [ngValue]="2">2</option>
@@ -69,17 +51,17 @@
     <div class="field">
       <label>Préférences alimentaires</label>
       <div class="checkbox-group">
-        <label><input type="checkbox" name="vegetarien" [(ngModel)]="model.vegetarien"/> Végétarien</label>
-        <label><input type="checkbox" name="halal" [(ngModel)]="model.halal"/> Halal</label>
-        <label><input type="checkbox" name="casher" [(ngModel)]="model.casher"/> Casher</label>
-        <label><input type="checkbox" name="sansAllergene" [(ngModel)]="model.sansAllergene"/> Sans allergènes</label>
+        <label><input type="checkbox" name="vegetarien" [(ngModel)]="model.vegetarien" [disabled]="!isComing"/> Végétarien</label>
+        <label><input type="checkbox" name="halal" [(ngModel)]="model.halal" [disabled]="!isComing"/> Halal</label>
+        <label><input type="checkbox" name="casher" [(ngModel)]="model.casher" [disabled]="!isComing"/> Casher</label>
+        <label><input type="checkbox" name="sansAllergene" [(ngModel)]="model.sansAllergene" [disabled]="!isComing"/> Sans allergènes</label>
       </div>
     </div>
 
     <!-- Remarques -->
     <div class="field">
       <label for="notes">Allergies ou remarques</label>
-      <textarea id="notes" name="remarque" [(ngModel)]="model.remarque" placeholder="Indiquez ici vos allergies ou préférences"></textarea>
+      <textarea id="notes" name="remarque" [(ngModel)]="model.remarque" [disabled]="!isComing" placeholder="Indiquez ici vos allergies ou préférences"></textarea>
     </div>
 
     <!-- Présence aux événements -->
@@ -88,22 +70,22 @@
 
       <div class="checkbox-group elegant">
         <label>
-          <input type="checkbox" name="mairie" [(ngModel)]="model.mairie"/>
+          <input type="checkbox" name="mairie" [(ngModel)]="model.mairie" [disabled]="!isComing"/>
           <span></span> Cérémonie civile (mairie)
         </label>
 
         <label>
-          <input type="checkbox" name="eglise" [(ngModel)]="model.eglise"/>
+          <input type="checkbox" name="eglise" [(ngModel)]="model.eglise" [disabled]="!isComing"/>
           <span></span> Cérémonie religieuse (église)
         </label>
 
         <label>
-          <input type="checkbox" name="vinDHonneur" [(ngModel)]="model.vinDHonneur"/>
+          <input type="checkbox" name="vinDHonneur" [(ngModel)]="model.vinDHonneur" [disabled]="!isComing"/>
           <span></span> Vin d'honneur
         </label>
 
         <label>
-          <input type="checkbox" name="reception" [(ngModel)]="model.reception"/>
+          <input type="checkbox" name="reception" [(ngModel)]="model.reception" [disabled]="!isComing"/>
           <span></span> Réception
         </label>
       </div>
@@ -115,12 +97,12 @@
       <div class="choice">
         <label class="radio">
           <input type="radio" name="vehicule" value="true"
-          [(ngModel)]="model.vehicule"/>
+          [(ngModel)]="model.vehicule" [disabled]="!isComing"/>
           <span></span> Oui
         </label>
         <label class="radio">
           <input type="radio" name="vehicule" value="false"
-                 [(ngModel)]="model.vehicule"/>
+                 [(ngModel)]="model.vehicule" [disabled]="!isComing"/>
           <span></span> Non
         </label>
       </div>
@@ -132,17 +114,17 @@
         <div class="choice">
           <label class="radio">
             <input type="radio" name="covoiturage" value="true"
-            [(ngModel)]="model.covoiturage">
+            [(ngModel)]="model.covoiturage" [disabled]="!isComing">
             <span></span> Oui, avec plaisir
           </label>
           <label class="radio">
             <input type="radio" name="covoiturage" value="false"
-                   [(ngModel)]="model.covoiturage">
+                   [(ngModel)]="model.covoiturage" [disabled]="!isComing">
             <span></span> Non
           </label>
         </div>
       </div>
-    }
+    </div>
 
     <!-- Bouton -->
     <button type="submit" [disabled]="loading || userForm.invalid">
@@ -154,5 +136,15 @@
       }
     </button>
   </form>
+
+    <!-- MESSAGE SUCCES -->
+    @if (successMessage) {
+    <div class="success">{{ successMessage }}</div>
+    }
+
+    <!-- MESSAGE ERREUR -->
+    @if (error) {
+    <div class="error">Une erreur est survenue, merci de réessayer.</div>
+    }
   </div>
 </section>

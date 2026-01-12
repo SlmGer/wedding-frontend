@@ -71,4 +71,9 @@ export class Rsvp {
       }
     });
   }
+
+  get isComing(): boolean {
+    return this.model.present === true;
+  }
+
 }
