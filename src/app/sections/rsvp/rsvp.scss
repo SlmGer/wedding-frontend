@@ -133,7 +133,7 @@
     font-weight: 600;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    //transition: background 0.3s ease;
   }
 
   button:hover {
@@ -231,6 +231,14 @@ button[disabled] {
   .rsvp-form .choice {
     display: flex;
     gap: 1rem;
+  }
+
+  .rsvp .intro {
+    font-size: small;
+  }
+
+ .rsvp h2 {
+    font-size: 1.8rem;
   }
 }
 

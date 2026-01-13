@@ -31,3 +31,13 @@
     color: var(--color-primary);
   }
 }
+
+@media (max-width: 768px) {
+  .gifts .intro {
+    font-size: small;
+  }
+
+  .gifts h2 {
+    font-size: 1.8rem;
+  }
+}

@@ -70,3 +70,13 @@ h2 {
 .text .center {
   align-text: center;
 }
+
+@media (max-width: 768px) {
+  .intro {
+    font-size: small;
+  }
+
+  .dresscode h2 {
+    font-size: 1.8rem;
+  }
+}
