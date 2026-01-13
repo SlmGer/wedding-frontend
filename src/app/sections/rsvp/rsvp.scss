@@ -242,20 +242,20 @@ button[disabled] {
 
 @media (max-width: 768px) {
 
+  .rsvp{
+    .intro {
+        font-size: small;
+      }
 
-  .rsvp .intro {
-    font-size: small;
-  }
+      .rsvp h2 {
+        font-size: 1.8rem;
+      }
 
- .rsvp h2 {
-    font-size: 1.8rem;
-  }
-
- .rsvp
- label,
- input,
- select,
- textarea {
-   font-size: small;
+      label,
+      input,
+      select,
+      textarea {
+       font-size: small;
+      }
   }
 }

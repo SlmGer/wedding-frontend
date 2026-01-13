@@ -33,7 +33,7 @@
 }
 
 @media (max-width: 768px) {
-  .gifts .intro, a {
+  .gifts .intro {
     font-size: small;
   }
 
@@ -42,6 +42,10 @@
   }
 
   .gifts p {
+    font-size: small;
+  }
+
+  .gifts a {
     font-size: small;
   }
 }
