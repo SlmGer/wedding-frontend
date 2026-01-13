@@ -10,8 +10,9 @@
     <div class="accommodation-grid">
 
       @for(acc of accommodations; track acc.id){
-        <a class="accommodation-card"
-          href="{{acc.bookingUrl}}"
+        <a
+          class="accommodation-card"
+          [href]="acc.bookingUrl"
           target="_blank"
           rel="noopener"
         >
