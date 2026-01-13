@@ -65,13 +65,7 @@ h2 {
   .line {
     display: none;
   }
-}
 
-.text .center {
-  align-text: center;
-}
-
-@media (max-width: 768px) {
   .intro {
     font-size: small;
   }
@@ -79,4 +73,12 @@ h2 {
   .dresscode h2 {
     font-size: 1.8rem;
   }
+
+  .dresscode-image img {
+    width: 150px;
+  }
+}
+
+.text .center {
+  align-text: center;
 }

@@ -48,7 +48,6 @@
   }
 
   input[type="text"],
-  input[type="email"],
   select,
   textarea {
     padding: 0.8rem 1rem;
@@ -239,6 +238,14 @@ button[disabled] {
 
  .rsvp h2 {
     font-size: 1.8rem;
+  }
+
+ .rsvp
+ label,
+ input,
+ select,
+ textarea {
+   font-size: small;
   }
 }
 
