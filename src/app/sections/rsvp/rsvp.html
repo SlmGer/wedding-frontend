@@ -37,15 +37,6 @@
     </div>
 
     <div class="conditional-section" [class.disabled]="!isComing">
-    <!-- Nombre d'enfants -->
-    <div class="field">
-      <label for="children">Nombre d'enfants</label>
-      <select id="children" name="enfants" [(ngModel)]="model.enfants" [disabled]="!isComing">
-        <option [ngValue]="0">0</option>
-        <option [ngValue]="1">1</option>
-        <option [ngValue]="2">2</option>
-      </select>
-    </div><br/>
 
     <!-- Présence aux événements -->
     <div class="field">
@@ -73,6 +64,16 @@
         </label>
       </div>
     </div><br/>
+
+    <!-- Nombre d'enfants -->
+    <div class="field">
+        <label for="children">Nombre d'enfants</label>
+        <select id="children" name="enfants" [(ngModel)]="model.enfants" [disabled]="!isComing">
+          <option [ngValue]="0">0</option>
+          <option [ngValue]="1">1</option>
+          <option [ngValue]="2">2</option>
+        </select>
+      </div><br/>
 
     <!-- Transport -->
     <div class="field">
