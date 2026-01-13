@@ -7,7 +7,6 @@
   {{ message }}
 </div>
 }
-
 <section class="admin-header">
   <h2>Gestion des hébergements</h2>
 
@@ -15,7 +14,10 @@
     ➕ Ajouter un hébergement
   </button>
 </section>
-@if(!isFormVisible){
+@if(loading){
+<p class="loading">Chargement des hébergements...</p>
+}
+@if(!loading && !isFormVisible){
 <section class="grid">
 
   @for (acc of accommodations; track acc.id) {
@@ -108,66 +110,3 @@
 
 </section>
 }
-<!--<section class="admin-accommodation">
-
-  <h2>Hébergements à proximité</h2>
-
-   FORM
-  <form (ngSubmit)="submit()" class="form">
-    <input type="text" placeholder="Nom de l’hébergement" [(ngModel)]="model.name" name="name" required>
-    <select [(ngModel)]="model.type" name="type" required>
-      <option value="" disabled selected>Type d'hébergement</option>
-      <option>Hôtel</option>
-      <option>Airbnb</option>
-      <option>Gîte</option>
-      <option>Chambre d’hôtes</option>
-    </select>
-    <input type="text" placeholder="Adresse" [(ngModel)]="model.address" name="address" required />
-    <input type="text" placeholder="Distance depuis la salle (ex: 5 min en voiture)"
-      [(ngModel)]="model.distance" name="distance" />
-    <input
-      type="url" placeholder="Lien Google Maps"
-      [(ngModel)]="model.googleMapsUrl"
-      name="googleMapsUrl" required />
-
-    <input
-      type="url" placeholder="Lien de réservation (optionnel)"
-      [(ngModel)]="model.bookingUrl" name="bookingUrl" />
-
-    <input
-      type="url" placeholder="URL de l’image"
-      [(ngModel)]="model.imageUrl" name="imageUrl" />
-
-    <label class="checkbox">
-      <input
-        type="checkbox"
-        [(ngModel)]="model.active" name="active" />
-      Visible sur le site
-    </label>
-
-    <button type="submit">
-      {{ model.id ? 'Mettre à jour' : 'Ajouter' }}
-    </button>
-  </form>
--->
-  <!-- LIST
-  <div class="grid">
-    @for (acc of accommodations; track acc.id){
-      <div class="card">
-        @if(acc.imageUrl){
-        <img src="{{acc.imageUrl}}" alt="{{acc.name}}" />
-        }@else{
-        <img src="assets/hebergement.jpg" alt="{{acc.name}}" />
-        }
-        <h3>{{ acc.name }}</h3>
-        <p>{{ acc.address }} – {{ acc.distance }}</p>
-
-        <div class="actions">
-          <a href="{{acc.googleMapsUrl}}" target="_blank">Voir sur la carte</a>
-          <button class="danger" (click)="remove(acc.id!)">Supprimer</button>
-        </div>
-      </div>
-    }
-  </div>
-
-</section>-->

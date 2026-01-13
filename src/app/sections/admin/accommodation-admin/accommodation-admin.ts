@@ -23,6 +23,7 @@ export class AccommodationAdmin implements OnInit {
  message: string | null = null;
  messageType: 'success' | 'error' = 'success';
 
+  loading = false;
 
   model: AccommodationModel = {
     name: '',
@@ -40,7 +41,18 @@ export class AccommodationAdmin implements OnInit {
   }
 
   load(){
-    this.service.getAll().subscribe(data => this.accommodations = data);
+    this.loading = true;
+
+    this.service.getAll().subscribe({
+      next: data => {
+         this.accommodations = data;
+         this.loading = false;
+      },
+      error: () => {
+        this.loading = false
+        this.showError('Impossible de charger les hébergements');
+      }
+    });
   }
 
   remove(id?: number){
@@ -91,10 +103,17 @@ export class AccommodationAdmin implements OnInit {
       : this.service.create(this.model);
 
      action.subscribe({
-        next: () => {
-          this.load();
+        next: (saved) => {
+          if(this.isEditMode){
+            const index = this.accommodations.findIndex(a => a.id === saved.id);
+            if(index !== -1) this.accommodations[index] = saved;
+          } else {
+            this.accommodations.unshift(saved);
+          }
+
           this.isFormVisible = false;
           this.reset();
+
           this.showSuccess(
             this.isEditMode
               ? 'Hébergement mis à jour'
@@ -106,15 +125,25 @@ export class AccommodationAdmin implements OnInit {
   }
 
   showSuccess(msg: string) {
-    this.message = msg;
-    this.messageType = 'success';
+    this.message = null;
+
+    setTimeout(() => {
+      this.message = msg;
+      this.messageType = 'success';
+    });
+
     setTimeout(() => this.message = null, 3000);
   }
 
   showError(msg: string) {
-    this.message = msg;
-    this.messageType = 'error';
-    setTimeout(() => this.message = null, 4000);
+     this.message = null;
+
+      setTimeout(() => {
+        this.message = msg;
+        this.messageType = 'error';
+      });
+
+      setTimeout(() => this.message = null, 4000);
   }
 
 }
