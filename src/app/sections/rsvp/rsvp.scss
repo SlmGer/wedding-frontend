@@ -231,6 +231,17 @@ button[disabled] {
     display: flex;
     gap: 1rem;
   }
+}
+
+.conditional-section.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+  filter: grayscale(0.4);
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+
 
   .rsvp .intro {
     font-size: small;
@@ -247,11 +258,4 @@ button[disabled] {
  textarea {
    font-size: small;
   }
-}
-
-.conditional-section.disabled {
-  opacity: 0.45;
-  pointer-events: none;
-  filter: grayscale(0.4);
-  transition: opacity 0.3s ease;
 }
