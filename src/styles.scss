@@ -77,3 +77,8 @@ section {
   padding: 0 1rem;
 }
 
+@media (max-width: 768px) {
+  .container h2 {
+    font-size: 2rem;
+  }
+}

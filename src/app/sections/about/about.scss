@@ -28,7 +28,7 @@
 }
 
 .side.text {
-  max-width: 300px;
+  max-width: 500px;
   flex-direction: column;
 }
 
@@ -90,4 +90,10 @@
   height: 12px;
   background: var(--gold-main);
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .side {
+    font-size: small;
+  }
 }
