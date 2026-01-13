@@ -103,17 +103,10 @@ export class AccommodationAdmin implements OnInit {
       : this.service.create(this.model);
 
      action.subscribe({
-        next: (saved) => {
-          if(this.isEditMode){
-            const index = this.accommodations.findIndex(a => a.id === saved.id);
-            if(index !== -1) this.accommodations[index] = saved;
-          } else {
-            this.accommodations.unshift(saved);
-          }
-
+        next: () => {
+          this.load();
           this.isFormVisible = false;
           this.reset();
-
           this.showSuccess(
             this.isEditMode
               ? 'Hébergement mis à jour'
