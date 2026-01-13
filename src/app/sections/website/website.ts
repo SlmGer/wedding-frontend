@@ -8,6 +8,7 @@ import {Header} from "../header/header";
 import {Hero} from "../hero/hero";
 import {Info} from "../info/info";
 import {Rsvp} from "../rsvp/rsvp";
+import {Logistics} from "../logistics/logistics";
 import {RouterOutlet} from '@angular/router';
 
 @Component({
@@ -22,6 +23,7 @@ import {RouterOutlet} from '@angular/router';
     Hero,
     Info,
     Rsvp,
+    Logistics
   ],
   templateUrl: './website.html',
   styleUrl: './website.scss',
