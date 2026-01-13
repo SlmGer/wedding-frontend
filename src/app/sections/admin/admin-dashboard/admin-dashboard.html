@@ -1,5 +1,13 @@
 <h1>Dashboard RSVP</h1>
-@if(stats){
+@if(loading){
+  <p>Chargement des statistiques...</p>
+}
+
+@if(error){
+  <p class="error">{{ error }}</p>
+}
+
+@if(stats && !loading){
 <div class="stats-grid">
 
   <div class="stat-card">
@@ -23,6 +31,26 @@
   </div>
 
   <div class="stat-card">
+    <h3>Végétariens</h3>
+    <p>{{ stats.vegetarien }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Halal</h3>
+    <p>{{ stats.halal }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Casher</h3>
+    <p>{{ stats.casher }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Sans Allergène</h3>
+    <p>{{ stats.sansAllergene }}</p>
+  </div>
+
+  <div class="stat-card">
     <h3>Mairie</h3>
     <p>{{ stats.mairie }}</p>
   </div>
@@ -40,6 +68,16 @@
   <div class="stat-card">
     <h3>Réception</h3>
     <p>{{ stats.reception }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Véhiculés</h3>
+    <p>{{ stats.vehicule }}</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Covoiturage accepté</h3>
+    <p>{{ stats.covoiturage }}</p>
   </div>
 
 </div>

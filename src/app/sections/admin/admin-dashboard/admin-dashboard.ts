@@ -12,8 +12,26 @@ export class AdminDashboard {
   private service = inject(AdminRsvpService);
 
   stats?: RsvpStats;
+  loading = false;
+  error : string | null = null;
 
   ngOnInit() {
-    this.service.getStats().subscribe(s => this.stats = s);
+    this.load();
   }
+
+  load() {
+      this.loading = true;
+      this.error = null;
+
+      this.service.getStats().subscribe({
+        next: s => {
+          this.stats = s;
+          this.loading = false;
+        },
+        error: () => {
+          this.loading = false;
+          this.error = 'Impossible de charger les statistiques';
+        }
+      });
+    }
 }
