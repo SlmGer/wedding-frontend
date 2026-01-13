@@ -47,23 +47,6 @@
       </select>
     </div>
 
-    <!-- Préférences alimentaires -->
-    <div class="field">
-      <label>Préférences alimentaires</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="vegetarien" [(ngModel)]="model.vegetarien" [disabled]="!isComing"/> Végétarien</label>
-        <label><input type="checkbox" name="halal" [(ngModel)]="model.halal" [disabled]="!isComing"/> Halal</label>
-        <label><input type="checkbox" name="casher" [(ngModel)]="model.casher" [disabled]="!isComing"/> Casher</label>
-        <label><input type="checkbox" name="sansAllergene" [(ngModel)]="model.sansAllergene" [disabled]="!isComing"/> Sans allergènes</label>
-      </div>
-    </div>
-
-    <!-- Remarques -->
-    <div class="field">
-      <label for="notes">Allergies ou remarques</label>
-      <textarea id="notes" name="remarque" [(ngModel)]="model.remarque" [disabled]="!isComing" placeholder="Indiquez ici vos allergies ou préférences"></textarea>
-    </div>
-
     <!-- Présence aux événements -->
     <div class="field">
       <label>Je serai présent à :</label>
@@ -124,6 +107,23 @@
           </label>
         </div>
       </div>
+    </div>
+
+    <!-- Préférences alimentaires -->
+    <div class="field">
+      <label>Préférences alimentaires</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="vegetarien" [(ngModel)]="model.vegetarien" [disabled]="!isComing"/> Végétarien</label>
+        <label><input type="checkbox" name="halal" [(ngModel)]="model.halal" [disabled]="!isComing"/> Halal</label>
+        <label><input type="checkbox" name="casher" [(ngModel)]="model.casher" [disabled]="!isComing"/> Casher</label>
+        <label><input type="checkbox" name="sansAllergene" [(ngModel)]="model.sansAllergene" [disabled]="!isComing"/> Sans allergènes</label>
+      </div>
+    </div>
+
+    <!-- Remarques -->
+    <div class="field">
+      <label for="notes">Allergies ou remarques</label>
+      <textarea id="notes" name="remarque" [(ngModel)]="model.remarque" [disabled]="!isComing" placeholder="Indiquez ici vos allergies ou préférences"></textarea>
     </div>
 
     <!-- Bouton -->
