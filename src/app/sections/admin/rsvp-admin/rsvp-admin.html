@@ -1,9 +1,19 @@
 <section class="admin-rsvp">
   <h2>Réponses RSVP</h2>
 
-  @if (!(rsvps.length > 0)){
-    <p>Aucune réponse pour le moment</p>
+  @if (loading) {
+  <p>Chargement des réponses...</p>
   }
+
+  @if (error) {
+  <p class="error">{{ error }}</p>
+  }
+
+  @if (!loading && rsvps.length === 0) {
+  <p>Aucune réponse pour le moment</p>
+  }
+
+  @if (!loading && rsvps.length > 0) {
 
   <div class="stats">
     <div>👥 Total : {{ rsvps.length }}</div>
@@ -11,8 +21,7 @@
     <div>❌ Absents : {{ rsvps.length - comingCount }}</div>
   </div>
 
-  @if (rsvps.length > 0) {
-    <table class="rsvp-table">
+  <table class="rsvp-table">
       <thead>
       <tr>
         <th>Invité</th>

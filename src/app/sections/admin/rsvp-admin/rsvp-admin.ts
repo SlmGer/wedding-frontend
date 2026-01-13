@@ -12,15 +12,27 @@ export class RsvpAdmin implements OnInit {
   private service = inject(AdminRsvpService);
 
   rsvps: RsvpModel[] = [];
+  loading = false;
+  error:  string | null = null;
 
   ngOnInit() {
     this.load();
   }
 
   load() {
-    this.service.getAll().subscribe(data => {
-      this.rsvps = data;
-    });
+    this.loading = true;
+      this.error = null;
+
+      this.service.getAll().subscribe({
+        next: data => {
+          this.rsvps = data;
+          this.loading = false;
+        },
+        error: () => {
+          this.loading = false;
+          this.error = 'Impossible de charger les réponses RSVP';
+        }
+      });
   }
 
   remove(id: number) {
