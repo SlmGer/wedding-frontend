@@ -1,4 +1,4 @@
-.gifts {
+/*.gifts {
   text-align: center;
   padding: 1rem 2rem;
   background: #fff;
@@ -30,7 +30,87 @@
     font-style: italic;
     color: var(--color-primary);
   }
+}*/
+
+.gifts {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, #f8f6f2, #eef2f7);
+
+  h2 {
+    font-size: 2.6rem;
+    color: var(--blue-deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .intro {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--blue-main);
+  }
+
+  p {
+    max-width: 700px;
+    margin: 0 auto 1.2rem;
+    line-height: 1.6;
+  }
+
+  .gift-message {
+    margin: 2.5rem auto;
+    font-size: 1.05rem;
+  }
+
+  .qr-section {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin: 3rem 0;
+  }
+
+  .qr-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 20px;
+    width: 220px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+
+    img {
+      width: 160px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+
+  .wero-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 30px;
+    background: var(--gold-main);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212,175,55,0.35);
+    }
+  }
+
+  .thank-you {
+    margin-top: 3rem;
+    font-weight: 500;
+    color: var(--blue-deep);
+  }
 }
+
 
 @media (max-width: 768px) {
   .gifts .intro {
