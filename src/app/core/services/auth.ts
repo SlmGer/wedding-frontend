@@ -45,6 +45,10 @@ export class AuthService {
     return this.getRole() === 'GUEST';
   }
 
+  isFamily(): boolean {
+    return this.getRole() === 'FAMILY';
+  }
+
   isLoggedIn(): boolean {
     return !!this.getRole();
   }

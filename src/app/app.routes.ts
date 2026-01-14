@@ -5,14 +5,20 @@ import { RsvpAdmin } from './sections/admin/rsvp-admin/rsvp-admin';
 import { AdminDashboard } from './sections/admin/admin-dashboard/admin-dashboard';
 import { AccommodationAdmin } from './sections/admin/accommodation-admin/accommodation-admin';
 import { Login } from './sections/auth/login/login';
-import {guestGuard} from './guards/guest-guard';
-import {adminGuard} from './guards/admin-guard';
+import { guestGuard } from './guards/guest-guard';
+import { familyGuard } from './guards/family-guard';
+import { adminGuard } from './guards/admin-guard';
 
 export const routes: Routes = [
   {
     path: '',
-    canActivate: [guestGuard],
+    canActivate: [familyGuard],
     component: Website
+  },
+  {
+    path: '',
+    canActivate: [guestGuard],
+    component: WebsiteWithoutMairie
   },
   {
     path: 'login',
