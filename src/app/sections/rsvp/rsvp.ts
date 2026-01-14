@@ -3,6 +3,7 @@ import { RsvpService } from '../../core/services/rsvp';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RsvpModel } from '../../models/rsvp.model';
+import { AuthService } from '../../core/services/auth';
 
 @Component({
   selector: 'app-rsvp',
@@ -43,7 +44,8 @@ export class Rsvp {
 
     remarque: ''
   }
-  constructor(private rsvpService: RsvpService) {}
+
+  constructor(public auth: AuthService, private rsvpService: RsvpService) {}
 
   onSubmit(){
     this.loading = true;
@@ -57,6 +59,10 @@ export class Rsvp {
       this.model.reception = false;
       this.model.vehicule = false;
       this.model.covoiturage = false;
+    }
+
+    if (!this.auth.isFamily()) {
+      this.model.mairie = false;
     }
 
     this.rsvpService.submitRsvp(this.model).subscribe({

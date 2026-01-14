@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../core/services/auth';
 
 @Component({
   selector: 'app-info',
@@ -13,6 +14,8 @@ export class Info {
   days = 0;
   hours = 0;
   minutes = 0;
+
+  constructor(public auth: AuthService) {}
 
   ngOnInit(){
     setInterval(() => this.updateCountdown(), 60000);

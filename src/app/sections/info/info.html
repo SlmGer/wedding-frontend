@@ -21,6 +21,7 @@
   <!-- TIMELINE -->
   <div class="timeline">
 
+    @if (auth.isFamily()) {
     <div class="event">
       <span class="hour">11h00</span>
       <h3>Mairie</h3><br/>
@@ -29,6 +30,7 @@
       <a href="https://maps.google.com/?q=mairie+Châteauneuf-les-Martigues"
          target="_blank">Voir sur Google Maps</a>
     </div>
+    }
 
     <div class="event">
       <span class="hour">14h00</span>

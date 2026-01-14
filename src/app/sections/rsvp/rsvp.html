@@ -49,10 +49,12 @@
       <label>Je serai présent à :</label>
 
       <div class="checkbox-group elegant">
+        @if (auth.isFamily()) {
         <label>
           <input type="checkbox" name="mairie" [(ngModel)]="model.mairie" [disabled]="!isComing"/>
           <span></span> Cérémonie civile (mairie)
         </label>
+        }
 
         <label>
           <input type="checkbox" name="eglise" [(ngModel)]="model.eglise" [disabled]="!isComing"/>
