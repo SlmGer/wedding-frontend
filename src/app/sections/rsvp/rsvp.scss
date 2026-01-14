@@ -259,3 +259,25 @@ button[disabled] {
       }
   }
 }
+.invitation-note {
+  margin-top: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.12); // doré léger
+  color: var(--blue-deep);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.4;
+}
+
+.invitation-note strong {
+  color: var(--gold-main);
+  font-weight: 600;
+}
+
+.info-icon {
+  font-size: 1rem;
+  line-height: 1.2;
+}
