@@ -258,6 +258,18 @@ button[disabled] {
        font-size: small;
       }
   }
+
+  .invitation-note {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+
+    padding: 1rem;
+    font-size: 0.9rem;
+
+    .info-icon {
+      font-size: 1.6rem;
+    }
 }
 .invitation-note {
   margin-top: 0.6rem;
