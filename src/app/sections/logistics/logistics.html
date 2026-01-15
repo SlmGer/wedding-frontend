@@ -9,10 +9,12 @@
       NB: Veuillez SVP privilégier une location de voiture, Taxi ou dans la mesure du possible, le covoiturage durant votre séjour.
     </p>
 
+    @if (auth.isFamily()) {
     <div class="logistics-frame">
       <div class="logistics-image">
         <img src="assets/logistics.jpg" alt="Logistique"/>
       </div>
     </div>
+    }
   </div>
 </section>
