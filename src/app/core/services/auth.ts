@@ -19,7 +19,7 @@ export class AuthService {
   login(password: string) {
     return this.http.post<any>(this.API, { password }).pipe(
       tap(res => {
-        if(res.success && isPlatformBrowser(this.platformId)) {
+        if(res.success /*&& isPlatformBrowser(this.platformId)*/) {
           localStorage.setItem(this.roleKey, res.role);
         }
       })
@@ -31,10 +31,10 @@ export class AuthService {
   }
 
   getRole(): string | null {
-    if(isPlatformBrowser(this.platformId)){
+    //if(isPlatformBrowser(this.platformId)){
       return localStorage.getItem(this.roleKey);
-    }
-    return null;
+    //}
+    //return null;
   }
 
   isAdmin(): boolean {
