@@ -47,7 +47,6 @@ export class AuthService {
 
   isFamily(): boolean {
     return this.getRole() === 'FAMILY';
-    console.log('role: ', this.getRole());
   }
 
   isLoggedIn(): boolean {
